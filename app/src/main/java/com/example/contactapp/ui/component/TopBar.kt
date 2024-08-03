@@ -91,7 +91,6 @@ fun TopBarAddContactScreen() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 10.dp, vertical = 0.dp),
-
                     )
 
                 //text field for last name
@@ -198,8 +197,16 @@ fun TopBarAddContactScreen() {
                         )
 
                         firebaseViewModel.addContact(contact)
-                        if (state.addSuccess){
-                            Toast.makeText(context, "Contact Added", Toast.LENGTH_SHORT).show()
+
+                        if(state.addSuccess == "success"){
+                            firstName = ""
+                            lastName = ""
+                            phoneNumber = ""
+                            email = ""
+                            Toast.makeText(context,"Contact Added",Toast.LENGTH_SHORT).show()
+                        }
+                        else{
+                            Toast.makeText(context,"Contact not added",Toast.LENGTH_SHORT).show()
                         }
 
                     },

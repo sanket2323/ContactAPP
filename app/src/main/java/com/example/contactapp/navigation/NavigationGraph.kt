@@ -24,7 +24,7 @@ fun NavigationGraph(
         }
 
         composable(Screens.Details.route){
-            val contact = navController.previousBackStackEntry?.savedStateHandle?.get<Contact>("contact")?:Contact("","","","")
+            val contact = navController.previousBackStackEntry?.savedStateHandle?.get<Contact>("contact")?:Contact("1","sanket","new","sanket")
             DetailsScreen(navController,contact = contact)
         }
 

@@ -28,7 +28,7 @@ fun ContactInfoCard(contact: Contact) {
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth()
-            .height(100.dp)
+            .height(130.dp)
     ) {
         Text(
             text = "Contact Information",

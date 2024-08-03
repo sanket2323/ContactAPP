@@ -19,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -33,7 +34,7 @@ fun DetailsScreen(navController: NavController,contact: Contact) {
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-
+        
         Icon(
             imageVector = Icons.Default.AccountCircle,
             contentDescription = "Account Info",
@@ -41,6 +42,8 @@ fun DetailsScreen(navController: NavController,contact: Contact) {
                 .size(200.dp)
                 .padding(top = 50.dp)
         )
+        Spacer(modifier = Modifier.height(5.dp))
+        Text(text = "${contact.fname} ${contact.lname}", fontWeight = FontWeight.SemiBold)
         Spacer(modifier = Modifier.height(20.dp))
         Row(
             modifier = Modifier

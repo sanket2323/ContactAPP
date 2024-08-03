@@ -1,8 +1,14 @@
 package com.example.contactapp.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+import kotlinx.serialization.Serializable
+
+
+@Parcelize
 data class Contact(
-    val number: String,
-    val fname:String,
-    val lname:String,
-    val email:String
-)
+    var number: String,
+    var fname:String,
+    var lname:String,
+    var email:String
+) : Parcelable

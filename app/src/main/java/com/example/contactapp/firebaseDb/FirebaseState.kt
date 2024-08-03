@@ -7,7 +7,7 @@ data class FirebaseState(
     val isContactError : String?= null,
     val contactList : List<Contact> = emptyList(),
 
-    val addSuccess : Boolean = false,
-    val addFailure : String? = null,
+    val addSuccess : String? = null ,
 
-)
+
+    )

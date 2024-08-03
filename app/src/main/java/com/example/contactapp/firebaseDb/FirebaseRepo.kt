@@ -1,5 +1,7 @@
 package com.example.contactapp.firebaseDb
 
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
 import com.example.contactapp.model.Contact
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -7,6 +9,7 @@ import kotlinx.coroutines.tasks.await
 
 class FirebaseRepo {
     val db = FirebaseFirestore.getInstance()
+
 
     suspend fun getContactList():ArrayList<Contact> {
         val data = ArrayList<Contact>()
@@ -25,8 +28,9 @@ class FirebaseRepo {
         return data
     }
 
-    fun addContact(contact: Contact): String {
-        var result = ""
+    fun addContact(contact: Contact):String {
+
+        var result =""
         if (contact.number.isNotEmpty() && contact.fname.isNotEmpty()) {
             val data = hashMapOf(
                 "number" to contact.number,
@@ -41,5 +45,9 @@ class FirebaseRepo {
             }
         }
         return result
+    }
+
+    fun deleteContact(){
+
     }
 }
